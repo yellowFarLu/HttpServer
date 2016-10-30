@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="HYLazyCatServer"
+  id="myeclipse.1474014603623"
+  context-root="/HYLazyCatServer"
+  j2ee-spec="6.0"
+  archive="HYLazyCatServer.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
