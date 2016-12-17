@@ -21,4 +21,14 @@ public class HYTaskInfo {
 	
 	// 任务金额
 	public String money;
+	
+	private String sendTime;  // 发送时间
+
+	public String getSendTime() {
+		return sendTime;
+	}
+
+	public void setSendTime(String sendTime) {
+		this.sendTime = sendTime;
+	}
 }

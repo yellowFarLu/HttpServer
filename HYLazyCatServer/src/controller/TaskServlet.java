@@ -83,41 +83,48 @@ public class TaskServlet extends HttpServlet {
 		taskInfo.content = (String)map.get("content");
 		taskInfo.photoNumber = (String)map.get("photoNumber");
 		taskInfo.money = (String)map.get("money");
+		taskInfo.setSendTime((String)map.get("sendTime"));
 		String imageString = (String)map.get("image");
-		byte[] image = TaskServlet.hex2byte(imageString);
 		
-		// 时用 手机号码 + 200位随机字符串作为name属性，下次通过name参数获取对应的图片
-		String randomStr = TaskServlet.getRandomString(52);
-		// 得到工程的真正路径
-		String realPathString = request.getRealPath(""); 
-		// 得到服务端存储位置
-		String preString = "\\WebRoot\\taskImage\\"; // 前缀
-		String imageSave = String.format("%s%s.png", taskInfo.photoNumber, randomStr); // 文件名字
-		
-		// 创建图片以后访问的URL
-		// 如： http://localhost:8080/HYLazyCatServer/WebRoot/taskImage
-		taskInfo.imageUrl = "http://localhost:8080/HYLazyCatServer/WebRoot/taskImage/" + imageSave;
-		
-		imageSave = realPathString + preString + imageSave;
-		
-		// 把图片存入写入本地(子线程中写入)
-		String defaultSaveImageString = realPathString + "\\WebRoot\\taskImage";
-		File fileDirFile = new File(defaultSaveImageString);
-		if (!fileDirFile.exists()) {
-			fileDirFile.mkdirs();
+		if (imageString != null) { // 有图片
+			byte[] image = TaskServlet.hex2byte(imageString);
+			
+			// 时用 手机号码 + 52位随机字符串作为name属性，下次通过name参数获取对应的图片
+			String randomStr = TaskServlet.getRandomString(52);
+			// 得到工程的真正路径
+			String realPathString = request.getRealPath(""); 
+			// 得到服务端存储位置
+			String preString = "\\WebRoot\\taskImage\\"; // 前缀
+			String imageSave = String.format("%s%s.png", taskInfo.photoNumber, randomStr); // 文件名字
+			
+			// 创建图片以后访问的URL
+			// 如： http://localhost:8080/HYLazyCatServer/WebRoot/taskImage
+			String iP = "http://139.199.204.216:8080"; 
+//			taskInfo.imageUrl = "http://localhost:8080/HYLazyCatServer/WebRoot/taskImage/" + imageSave;
+			// 发布版
+			taskInfo.imageUrl = iP + "/HYLazyCatServer/WebRoot/taskImage/" + imageSave;
+			
+			imageSave = realPathString + preString + imageSave;
+			
+			// 把图片存入写入本地(子线程中写入)
+			String defaultSaveImageString = realPathString + "\\WebRoot\\taskImage";
+			File fileDirFile = new File(defaultSaveImageString);
+			if (!fileDirFile.exists()) {
+				fileDirFile.mkdirs();
+			}
+			System.out.println("文件夹是否存在" + fileDirFile.exists());
+			File file = new File(imageSave);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			System.out.println("文件是否存在" + file.exists());
+			
+			FileOutputStream fileOutputStream = new FileOutputStream(file);
+			System.out.println(image);
+			fileOutputStream.write(image);
+			fileOutputStream.close();
+			System.out.println("已写入文件");
 		}
-		System.out.println("文件夹是否存在" + fileDirFile.exists());
-		File file = new File(imageSave);
-		if (!file.exists()) {
-			file.createNewFile();
-		}
-		System.out.println("文件是否存在" + file.exists());
-		
-		FileOutputStream fileOutputStream = new FileOutputStream(file);
-		System.out.println(image);
-		fileOutputStream.write(image);
-		fileOutputStream.close();
-		System.out.println("已写入文件");
 		
 		return taskInfo;
 	}

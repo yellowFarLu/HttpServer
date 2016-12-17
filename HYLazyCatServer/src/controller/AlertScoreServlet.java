@@ -9,22 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.HYRobInfo;
+import tool.HYUserInfoTool;
 
-import tool.HYTaskInfoTool;
-
-public class RobTaskServlet extends HttpServlet {
+public class AlertScoreServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HYRobInfo robInfo = new HYRobInfo();
-		robInfo.setTaskId(request.getParameter("taskId"));
-		robInfo.setPhotoNumber(request.getParameter("photoNumber"));
+		doPost(request, response);
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String photoNumber = request.getParameter("photoNumber"); 
+		String honestyScoreStr = request.getParameter("honestyScore");
+		int honestyScore = 100;
+		if (honestyScoreStr != null) {
+			honestyScore = Integer.parseInt(honestyScoreStr);
+		}
 		
-		HYTaskInfoTool taskInfoTool = HYTaskInfoTool.shareTaskInfoTool();
-		Boolean result = false;
 		try {
-			result = taskInfoTool.inserthasRobTask(robInfo);
+			HYUserInfoTool.shareUserInfoTool().alertPeopleScore(photoNumber, honestyScore);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,16 +37,11 @@ public class RobTaskServlet extends HttpServlet {
 			e.printStackTrace();
 		} finally {
 			PrintWriter writer = response.getWriter();
-			writer.write(String.valueOf(result));
 			writer.close();
 		}
-	
-	}
-
-
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+		
+		
+		
 	}
 
 }

@@ -9,40 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.HYRobInfo;
-
 import tool.HYTaskInfoTool;
 
-public class RobTaskServlet extends HttpServlet {
+public class HYCompeleteTask extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HYRobInfo robInfo = new HYRobInfo();
-		robInfo.setTaskId(request.getParameter("taskId"));
-		robInfo.setPhotoNumber(request.getParameter("photoNumber"));
-		
+		String taskId = request.getParameter("taskId");
 		HYTaskInfoTool taskInfoTool = HYTaskInfoTool.shareTaskInfoTool();
-		Boolean result = false;
 		try {
-			result = taskInfoTool.inserthasRobTask(robInfo);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			taskInfoTool.compeletTask(taskId);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			PrintWriter writer = response.getWriter();
-			writer.write(String.valueOf(result));
-			writer.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-	
 	}
-
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		doGet(request, response);
 	}
 
 }

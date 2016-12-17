@@ -2,7 +2,7 @@ package main;
 import java.sql.SQLException;
 
 import model.HYLoginInfo;
-import model.HYRegiserInfo;
+import model.userInfo.HYRegiserInfo;
 import tool.HYUserInfoTool;
 
 public class HttpServer {

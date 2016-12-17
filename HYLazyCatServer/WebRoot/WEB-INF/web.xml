@@ -61,6 +61,41 @@
     <servlet-name>GetAllTasksWithPhotoNumber</servlet-name>
     <servlet-class>controller.GetAllTasksWithPhotoNumber</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InsertValidateServlet</servlet-name>
+    <servlet-class>controller.InsertValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AlertScoreServlet</servlet-name>
+    <servlet-class>controller.AlertScoreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HYCompeletTaskServlet</servlet-name>
+    <servlet-class>controller.HYCompeletTaskServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HYCompeleteTask</servlet-name>
+    <servlet-class>controller.HYCompeleteTask</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AlertUserInfoServlet</servlet-name>
+    <servlet-class>controller.AlertUserInfoServlet</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -105,5 +140,25 @@
   <servlet-mapping>
     <servlet-name>GetAllTasksWithPhotoNumber</servlet-name>
     <url-pattern>/servlet/GetAllTasksWithPhotoNumber</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InsertValidateServlet</servlet-name>
+    <url-pattern>/servlet/InsertValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlertScoreServlet</servlet-name>
+    <url-pattern>/servlet/AlertScoreServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HYCompeletTaskServlet</servlet-name>
+    <url-pattern>/servlet/HYCompeletTaskServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HYCompeleteTask</servlet-name>
+    <url-pattern>/servlet/HYCompeleteTask</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlertUserInfoServlet</servlet-name>
+    <url-pattern>/servlet/AlertUserInfoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -3,15 +3,23 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySQL-JDBC"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Sun JDK 1.6.0_13"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-beanutils-1.8.0.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/jsonplugin-0.32.jar"/>
-	<classpathentry kind="lib" path="D:/myEclipseWS/HYLazyCatServer/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/xom-1.2.6.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/jsonplugin-0.32.jar"/>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15andJar/xom-1.2.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/jsonplugin-0.32.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.4-jdk15andJar/xom-1.2.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.16-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

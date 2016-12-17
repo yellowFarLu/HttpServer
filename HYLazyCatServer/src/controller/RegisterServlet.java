@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.HYRegiserInfo;
 import model.HYValidateInfo;
+import model.userInfo.HYRegiserInfo;
 
 import tool.HYUserInfoTool;
 
@@ -23,13 +23,13 @@ public class RegisterServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		HYUserInfoTool userInfoTool = HYUserInfoTool.shareUserInfoTool();
 		HYRegiserInfo regiserInfo = new HYRegiserInfo();
-		regiserInfo.useName = req.getParameter("userName");
+		regiserInfo.setUseName(null);
 		regiserInfo.pwd = req.getParameter("pwd");
-		regiserInfo.perId = req.getParameter("perId");
-		regiserInfo.schoolName = req.getParameter("schoolName");
+		regiserInfo.setPerId(null);
+		regiserInfo.setSchoolName(null);
 		regiserInfo.photoNumber = req.getParameter("photoNumber");
 		regiserInfo.sex = req.getParameter("sex");
-		
+		regiserInfo.setHonestyScore(0);
 		
 		boolean result = false;
 		try {
